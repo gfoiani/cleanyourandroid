@@ -11,8 +11,10 @@ permissions:
 jobs:
   tests:
     name: Tools, lists and guards
-    runs-on: ubuntu-latest
+    # 24.04: setup-python has no Python 3.9 for newer Ubuntu images, and 3.9 is the oldest we support
+    runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.9", "3.13"]
     steps:
