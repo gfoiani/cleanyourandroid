@@ -1,0 +1,25 @@
+# Xiaomi, Redmi and POCO (MIUI, HyperOS). Same format as core.txt.
+# To be extended from real devices; until then only packages with a well-known role are listed.
+
+com.miui.securitycenter                       # Security app; reported bootloops without it
+com.lbe.security.miui                         # permission manager; reported bootloops without it
+com.miui.securityadd                          # security add-ons
+com.miui.securitycore                         # Second space and app lock: holds data
+com.miui.core                                 # MIUI core library
+com.miui.system                               # MIUI system resources
+com.miui.rom                                  # MIUI ROM resources
+com.miui.home                                 # the MIUI home screen
+com.miui.powerkeeper                          # battery management; reported charging and sleep issues
+com.xiaomi.misettings                         # parts of Settings
+com.xiaomi.finddevice                         # Find device
+com.android.updater                           # system updates: security patches
+
+# Apps a phone is used through, even when another app is the default today (review, 2026-11-08)
+com.miui.packageinstaller                     # the MIUI/HyperOS package installer
+com.xiaomi.xmsf                               # Xiaomi services framework: push, Find device, account
+com.xiaomi.account                            # Xiaomi account
+com.xiaomi.simactivate.service                # SIM activation
+com.miui.cloud*                               # Xiaomi Cloud: backups and sync, holds data
+com.miui.gallery                              # Gallery: hidden album and cloud photos
+com.xiaomi.biometric                          # fingerprint and face unlock
+com.miui.face                                 # face unlock

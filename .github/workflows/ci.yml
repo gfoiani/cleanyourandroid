@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Tools, lists and guards
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Dev dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Tests (every list is also checked against guards/)
+        run: python -m pytest --cov --cov-report=term-missing

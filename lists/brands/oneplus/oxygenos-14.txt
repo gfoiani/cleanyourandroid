@@ -1,0 +1,62 @@
+# OnePlus phones on OxygenOS 14 (oplus platform, Android 14).
+# Started from a OnePlus 8T KB2003 (EEA), build KB2003_14.0.0.1311(EX01). Not every package is on
+# every model; compose.py leaves out what the phone does not have.
+#
+# @brands: oneplus
+# @sdk: 34-35
+#
+# Everything here is disabled for user 0, never uninstalled unless the phone refuses and the person
+# agreed (disable.py --fallback-uninstall). guards/oplus.txt lists what is never touched: the
+# security centre, permission manager, App cloner, system updates and the rest of the platform.
+
+# == OnePlus diagnostics and usage statistics [safe]
+com.oplus.statistics.rom                         # ROM usage statistics uploader
+com.oplus.logkit                                 # log collection for bug reports
+com.oplus.crashbox                               # crash report collection
+
+# == Preloaded partner activation [safe]
+com.netflix.partner.activation                   # Netflix preload activation (not the Netflix app)
+com.coloros.operationManual                      # the preloaded user manual app
+
+# == HeyTap push (OnePlus promotional notifications) [ask]
+com.heytap.mcs                                   # push service for OnePlus apps: promotions; Weather alerts may stop
+
+# == OnePlus account and Community [ask]
+com.oneplus.membership                           # Red Cable Club / OnePlus Community membership
+com.oneplus.account                              # OnePlus account sign-in
+
+# == Game Space [ask]
+com.oplus.games                                  # Games hub, game mode overlay and its recommendations
+
+# == Floating shortcuts [ask]
+com.coloros.smartsidebar                         # Smart sidebar
+com.coloros.floatassistant                       # floating ball shortcut
+
+# == Home screen search [ask]
+com.oppo.quicksearchbox                          # the launcher's search: the Search button on the home screen and swipe down
+
+# == Kids Space [ask]
+com.coloros.childrenspace                        # Kids Space (often off from the factory)
+
+# == OnePlus Weather [ask]
+net.oneplus.weather                              # Weather app and widget
+com.coloros.weather.service                      # weather data for the clock and lock screen widgets
+
+# == OnePlus earbuds and wearables [ask]
+com.oplus.melody                                 # OnePlus Buds settings (Bluetooth audio still works)
+com.oplus.healthservice                          # OnePlus health service for wearables
+
+# == Screen casting [ask]
+com.oplus.cast                                   # OnePlus screen cast (Miracast); Chromecast casting is separate
+
+# == Shelf [expert]
+com.coloros.assistantscreen                      # Shelf, the widget panel from the home screen; OxygenOS 14 refuses to disable it (OnePlus 8T KB2003), so only --fallback-uninstall removes it
+
+# == Not documented: check with `dumpsys package` before offering [expert]
+com.oplus.onetrace                               # system tracing; part of the oplus performance framework
+com.oplus.postmanservice                         # diagnostics data service
+com.oplus.qualityprotect                         # quality monitoring
+com.oplus.interconnectcollectkit                 # cross-device data collection
+com.coloros.healthcheck                          # device diagnostics
+com.oplus.pantanal.ums                           # smart suggestions and Fluid Cloud
+com.oplus.aiunit                                 # on-device AI features (text and image recognition)

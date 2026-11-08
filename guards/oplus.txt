@@ -1,0 +1,48 @@
+# OnePlus (OxygenOS), OPPO (ColorOS) and realme (realme UI): the shared "oplus" platform.
+# Same format as core.txt. Security updates are protected on purpose: a debloated phone still gets patches.
+
+oplus                                         # the oplus framework resources
+oplus.*                                       # framework overlays (display, camera)
+com.oplus.framework*                          # framework overlays (Bluetooth, OnePlus resources)
+com.oplus.appplatform                         # platform services other oplus apps call
+com.oplus.exsystemservice                     # extended system services
+com.oplus.exserviceui                         # extended system UI
+com.oplus.uiengine                            # UI engine used by system apps
+com.oplus.uxdesign                            # system UI resources
+com.oplus.securitypermission                  # permission manager; reported bootloops without it
+com.oplus.safecenter                          # security centre: permissions, call and SMS blocking
+com.oplus.securitykeyboard                    # secure keyboard for passwords
+com.oplus.encryption                          # private safe and file encryption: holds data
+com.oplus.multiapp                            # App cloner: cloned apps and their data
+com.coloros.systemclone                       # System cloner (second space): holds data
+com.oplus.apprecover                          # reinstalls removed system apps: the way back for uninstall
+com.oplus.wifibackuprestore                   # Wi-Fi backup and restore
+com.oplus.battery                             # battery and power management in Settings
+com.oplus.athena                              # background process management
+com.oplus.wirelesssettings                    # Wi-Fi, mobile network and hotspot settings
+com.oplus.nrMode                              # 5G mode
+com.oplus.virtualcomm                         # virtual modem service
+com.oplus.subsys                              # subsystem services
+com.oplus.location                            # location services
+com.oplus.locationproxy                       # location proxy
+com.oplus.sos                                 # emergency SOS
+com.oplus.gesture                             # navigation gestures
+com.oplus.notificationmanager                 # notification management
+com.oplus.screenshot                          # screenshots
+com.coloros.bootreg                           # first-boot registration
+com.coloros.lockassistant                     # lock screen helper
+com.oplus.ota                                 # system updates: security patches
+com.oplus.sau                                 # system app updates
+com.oplus.sauhelper                           # system app update helper
+com.oplus.romupdate                           # firmware configuration updates
+
+# Apps a phone is used through, even when another app is the default today (review, 2026-11-08)
+com.coloros.safecenter                        # older ColorOS security centre
+com.coloros.securitypermission                # older ColorOS permission manager
+com.coloros.phonemanager                      # Phone Manager: cleaner and security scan
+com.android.launcher                          # OnePlus and OPPO home screen (System Launcher)
+net.oneplus.launcher                          # older OnePlus home screen
+com.oplus.launcher                            # oplus home screen
+com.heytap.cloud                              # HeyTap / OnePlus Cloud: backups and sync, holds data
+com.oplus.ocloud                              # OnePlus Cloud: backups and sync, holds data
+com.oneplus.faceunlock                        # face unlock

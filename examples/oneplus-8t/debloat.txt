@@ -1,0 +1,55 @@
+# OnePlus 8T, KB2003 (EEA, unbranded), Android 14, OxygenOS 14.0, build KB2003_14.0.0.1311(EX01).
+# Applied on 2026-11-08 with tools/disable.py, one group at a time; after the reboot tools/check.py found
+# everything still off, and calls, SMS, mobile data, Wi-Fi, chat notifications, fingerprint unlock,
+# camera, alarm, banking app and a Bluetooth watch all worked.
+#
+# Kept on purpose: every Google app, OnePlus Weather, Instagram, LinkedIn, Amazon Shopping, Booking.com.
+# Refused by the phone: com.coloros.assistantscreen (Shelf); left on.
+
+# == OnePlus diagnostics and usage statistics [safe]
+com.oplus.statistics.rom                         # ROM usage statistics uploader
+com.oplus.logkit                                 # log collection for bug reports
+com.oplus.crashbox                               # crash report collection
+
+# == Preloaded partner activation [safe]
+com.netflix.partner.activation                   # Netflix preload activation (not the Netflix app)
+com.coloros.operationManual                      # the preloaded user manual app
+
+# == Google feedback and print suggestions [safe]
+com.google.android.feedback                      # sends app feedback and crash reports to Google
+com.google.android.printservice.recommendation   # suggests print plugins
+
+# == HeyTap push (OnePlus promotional notifications) [ask]
+com.heytap.mcs                                   # push service for OnePlus apps: promotions; Weather alerts may stop
+
+# == OnePlus account and Community [ask]
+com.oneplus.membership                           # Red Cable Club / OnePlus Community membership
+com.oneplus.account                              # OnePlus account sign-in
+
+# == Game Space [ask]
+com.oplus.games                                  # Games hub, game mode overlay and its recommendations
+
+# == Floating shortcuts [ask]
+com.coloros.smartsidebar                         # Smart sidebar
+com.coloros.floatassistant                       # floating ball shortcut
+
+# == Home screen search [ask]
+com.oppo.quicksearchbox                          # the launcher's search: the Search button on the home screen and swipe down
+
+# == Kids Space [ask]
+com.coloros.childrenspace                        # Kids Space (often off from the factory)
+
+# == OnePlus earbuds and wearables [ask]
+com.oplus.melody                                 # OnePlus Buds settings (Bluetooth audio still works)
+com.oplus.healthservice                          # OnePlus health service for wearables
+
+# == Screen casting [ask]
+com.oplus.cast                                   # OnePlus screen cast (Miracast); Chromecast casting is separate
+
+# == Netflix [ask]
+com.netflix.mediaclient                          # the preloaded Netflix app (downloads are kept while off)
+
+# == Microsoft Link to Windows [ask]
+com.microsoft.appmanager                         # Link to Windows: phone on the PC
+com.microsoft.deviceintegrationservice           # Link to Windows device integration
+com.microsoftsdk.crossdeviceservicebroker        # Microsoft cross-device services

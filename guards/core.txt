@@ -1,0 +1,84 @@
+# Android (AOSP) packages no list may disable or uninstall, on any phone.
+# Format: one package or prefix* per line, the reason after #. There is no switch to override these.
+# Read by tools/guards.py; tests/test_guards.py holds the must-protect cases.
+
+# The framework and system UI: without them the phone does not boot or has no screen
+android                                       # the Android framework
+android.ext.services                          # notification ranking, autofill; boot can fail without it
+android.ext.shared                            # shared library for system services
+com.android.systemui                          # status bar, lock screen, navigation
+com.android.internal.*                        # framework overlays (navigation mode, display cutout)
+com.android.settings                          # Settings: the way back for every other change
+com.android.shell                             # adb itself: disabling it locks this repo out
+com.android.server.*                          # Telecom and other system servers
+
+# Calls, SMS, SIM and emergency
+com.android.phone                             # calls, SIM, mobile data
+com.android.ims*                              # VoLTE and Wi-Fi calling
+com.android.mms.service                       # sending and receiving MMS
+com.android.smspush                           # WAP push (MMS notifications)
+com.android.stk*                              # SIM toolkit, carrier menus
+com.android.carrierconfig                     # per-carrier network settings
+com.android.carrierdefaultapp                 # carrier captive portal and data notifications
+com.android.ons                               # opportunistic network service (dual SIM)
+com.android.incallui                          # the in-call screen
+com.android.cellbroadcast*                    # emergency alerts (IT-Alert, EU-Alert, Amber): legally required
+com.android.emergency                         # emergency information on the lock screen
+
+# Where the person's data lives: contacts, SMS, call log, calendar, media, downloads
+com.android.providers.*                       # content providers hold contacts, SMS, call log, media
+com.android.externalstorage                   # access to internal storage and SD card
+com.android.mtp                               # file transfer over USB
+com.android.documentsui                       # the system file picker used to open and save files
+com.android.localtransport                    # backup transport
+com.android.backupconfirm                     # backup and restore confirmation
+
+# Security, permissions and keys
+com.android.permissioncontroller              # runtime permissions; boot can fail without it
+com.android.packageinstaller                  # installing and updating apps
+com.android.keychain                          # stored certificates and keys
+com.android.certinstaller                     # installing certificates (Wi-Fi, VPN)
+com.android.credentialmanager                 # passkeys and saved passwords
+com.android.rkpdapp                           # remote key provisioning (banking apps, Play Integrity)
+com.android.devicelockcontroller              # financed-device lock; disabling can lock the phone
+com.android.vpndialogs                        # VPN consent dialogs
+com.android.safetycenter.resources            # Security and privacy page in Settings
+
+# Mainline modules and their resources
+com.android.ext.services                      # mainline: notification and autofill services
+com.android.ext.shared                        # mainline shared library
+com.android.modulemetadata                    # mainline module metadata
+com.android.sdksandbox                        # SDK runtime
+com.android.location.fused                    # location for every app
+com.android.networkstack*                     # Wi-Fi and mobile network stack, tethering
+com.android.connectivity.resources*           # connectivity module resources
+com.android.wifi*                             # Wi-Fi module, resources and dialogs
+com.android.uwb*                              # ultra-wideband
+com.android.statementservice                  # app links verification
+
+# Radios
+com.android.bluetooth*                        # Bluetooth and its services
+com.android.nfc                               # NFC and contactless payments
+com.android.se                                # secure element for payments
+com.android.inputdevices                      # keyboard layouts for physical input
+
+# WebView: every app that shows web content
+com.android.webview                           # WebView
+
+# Apps a phone is used through, even when another app is the default today (review, 2026-11-08)
+com.android.systemui.*                        # System UI plugins and overlays
+com.android.launcher*                         # stock home screens (OnePlus uses com.android.launcher)
+com.android.contacts                          # Contacts app
+com.android.dialer                            # Phone app
+com.android.mms                               # Messages app (MMS)
+com.android.messaging                         # Messages app
+com.android.inputmethod.latin                 # AOSP keyboard: a fallback keyboard
+com.android.euicc*                            # eSIM profiles: disabling can make the SIM unusable
+com.android.captiveportallogin                # hotel and airport Wi-Fi sign-in
+com.android.settings.intelligence             # Settings search and suggestions
+com.android.managedprovisioning              # work profile setup
+com.android.calllogbackup                     # call log backup
+com.android.companiondevicemanager            # pairing watches and other companion devices
+com.android.proxyhandler                      # proxy settings
+com.android.pacprocessor                      # proxy auto-config
+com.android.apps.tag                          # NFC tags

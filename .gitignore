@@ -1,0 +1,18 @@
+# Private to the person running the tools: device identifiers, personal choices, screenshots
+backup/
+work/
+shots/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

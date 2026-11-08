@@ -1,0 +1,30 @@
+# Samsung (One UI). Same format as core.txt.
+# To be extended from real devices; until then only packages with a well-known role are listed.
+
+com.samsung.android.providers.*               # contacts, media and other data providers
+com.sec.android.provider.*                    # Samsung data providers
+com.sec.imsservice                            # VoLTE and Wi-Fi calling
+com.samsung.ims.*                             # IMS
+com.samsung.android.app.telephonyui           # telephony settings and dialogs
+com.samsung.android.incallui                  # the in-call screen
+com.samsung.android.emergency                 # emergency mode
+com.samsung.android.knox.*                    # Knox: Secure Folder, work profile, attestation
+com.samsung.knox.*                            # Secure Folder: holds data
+com.samsung.android.kgclient                  # KnoxGuard: disabling can lock a financed phone
+com.samsung.android.fmm                       # Find My Mobile
+com.samsung.android.biometrics.*              # fingerprint and face unlock
+com.samsung.android.honeyboard                # Samsung Keyboard: the fallback keyboard
+com.sec.android.app.SecSetupWizard            # needed after a factory reset
+com.sec.android.soagent                       # system updates: security patches
+com.wssyncmldm                                # system updates: security patches
+
+# Apps a phone is used through, even when another app is the default today (review, 2026-11-08)
+com.samsung.android.dialer                    # Samsung Phone
+com.samsung.android.messaging                 # Samsung Messages
+com.samsung.android.contacts                  # Samsung Contacts
+com.samsung.android.app.contacts              # Samsung Contacts
+com.sec.android.app.launcher                  # One UI Home
+com.sec.epdg                                  # Wi-Fi calling (ePDG)
+com.sec.unifiedwfc                            # Wi-Fi calling
+com.sec.android.sdhms                         # device health and thermal management
+com.samsung.android.samsungpass*              # Samsung Pass: saved passwords and passkeys

@@ -1,0 +1,42 @@
+# Google packages no list may disable or uninstall. Same format as core.txt.
+
+com.google.android.gms*                       # Play services: notifications, location, Find My Device, updates
+com.google.android.gsf                        # Google services framework
+com.android.vending                           # Play Store: app updates
+com.google.android.permissioncontroller       # runtime permissions; boot can fail without it
+com.google.android.packageinstaller           # installing and updating apps
+com.google.android.ext.services               # mainline: notification and autofill services
+com.google.android.ext.shared                 # mainline shared library
+com.google.android.modulemetadata             # mainline module metadata
+com.google.android.overlay.modules*           # mainline overlays; a Mi TV Stick never booted without them
+com.google.android.overlay.gmsconfig*         # Play services configuration overlays
+com.google.android.sdksandbox                 # SDK runtime
+com.google.android.networkstack*              # Wi-Fi and mobile network stack, tethering
+com.google.android.connectivity.resources*    # connectivity module resources
+com.google.android.wifi*                      # Wi-Fi module, resources and dialogs
+com.google.android.uwb*                       # ultra-wideband
+com.google.android.providers.*                # media provider module: photos, videos, downloads
+com.google.android.documentsui                # the system file picker
+com.google.android.cellbroadcast*             # emergency alerts (IT-Alert, EU-Alert, Amber): legally required
+com.google.android.ims                        # Carrier Services: VoLTE, Wi-Fi calling, RCS
+com.google.android.rkpdapp                    # remote key provisioning (banking apps, Play Integrity)
+com.google.android.safetycenter.resources     # Security and privacy page in Settings
+com.google.android.webview                    # WebView: every app that shows web content
+com.google.android.trichromelibrary           # the library WebView runs on
+com.google.android.setupwizard                # needed after a factory reset or a new user
+com.google.android.onetimeinitializer         # first-boot initialisation
+com.google.android.inputmethod.latin          # Gboard: the fallback keyboard for the lock-screen password
+com.google.android.captiveportallogin         # hotel and airport Wi-Fi sign-in
+
+# Apps a phone is used through, even when another app is the default today (review, 2026-11-08)
+com.google.android.dialer                     # Phone by Google
+com.google.android.contacts                   # Contacts by Google
+com.google.android.apps.messaging             # Messages by Google: SMS and RCS
+com.google.android.euicc*                     # eSIM profiles: disabling can make the SIM unusable
+com.google.android.bluetooth*                 # Bluetooth module
+com.google.android.backuptransport            # Google backup transport: backups of apps and settings
+com.google.android.syncadapters.*             # contacts and calendar sync with the Google account
+com.google.android.gsf*                       # Google services framework and login
+com.google.android.configupdater              # security configuration updates (certificate pins)
+com.google.android.partnersetup               # partner and carrier setup
+com.google.android.apps.nexuslauncher         # Pixel home screen

@@ -1,0 +1,48 @@
+# Settings that make the battery last longer on most Android phones. Some save a lot (the screen),
+# some a little (animations); each comment says what changes for the person.
+# Each group is one question: tools/tune.py changes only the groups the person says yes to, records every
+# old value first and puts it back with --restore. Turning off the apps nobody uses (lists/) saves
+# battery too: fewer background services wake the phone up.
+#
+# These are standard Android settings. Some skins (OnePlus, Samsung, Xiaomi) keep their own switch for
+# a few of them: the value is written but the phone may ignore it. Check on the screen after each group;
+# the comment says where the same switch lives in Settings.
+#
+# A value with <= or >= never makes a setting worse than the person already has it. default=<value> is what
+# Android uses while a setting has never been written: such a phone already has it and is left alone.
+#
+# @brands: any
+
+# == Screen turns off sooner [ask]
+system screen_off_timeout <=30000             # screen off after 30 s without a touch (Settings > Display > Screen timeout); the screen uses more battery than anything else
+
+# == Automatic brightness [ask]
+system screen_brightness_mode 1               # brightness follows the light around you (Settings > Display > Adaptive brightness)
+
+# == Dark theme [ask]
+secure ui_night_mode 2                        # dark theme everywhere; on OLED screens black pixels use no power. Shows after the reboot, and undoing it also takes a reboot; or switch it at once in Settings > Display
+
+# == Shorter animations [ask]
+global window_animation_scale 0.5             # windows open and close in half the time (Developer options); a small saving, the phone feels faster
+global transition_animation_scale 0.5         # the same for moving between screens
+global animator_duration_scale 0.5            # the same inside apps; 0 would switch them off and confuses some apps
+
+# == Wi-Fi and Bluetooth scanning while they are off [ask]
+global wifi_scan_always_enabled 0             # no Wi-Fi scans while Wi-Fi is off (Settings > Location > Location services > Wi-Fi scanning); location indoors and Find My Device get less precise while Wi-Fi is off
+global ble_scan_always_enabled 0              # no Bluetooth scans while Bluetooth is off; Fast Pair, finding tags and nearby devices, watches and Android Auto may need Bluetooth on to be found
+
+# == Adaptive battery [ask]
+global adaptive_battery_management_enabled 1 default=1  # Android limits the apps you rarely open (Settings > Battery); their notifications can arrive later
+
+# == Battery Saver comes on by itself [ask]
+global automatic_power_save_mode 0 default=0  # Battery Saver turns on at a fixed battery level; replaces the "based on your routine" option if that was on (stock Android and Pixel; skins with their own saver may ignore it)
+global low_power_trigger_level >=20           # at 20%, or at the higher level already set
+
+# == Always-on display off [ask]
+secure doze_always_on 0                       # no clock on the dark screen (stock Android and Pixel; on OnePlus, Samsung and Xiaomi switch it in Settings > Display or Lock screen)
+
+# == Mobile data always active off [expert]
+global mobile_data_always_on 0                # mobile data no longer stays up while on Wi-Fi (Developer options); moving from Wi-Fi to mobile data is slower, and a Wi-Fi call can drop when leaving Wi-Fi
+
+# == Screen at 60 Hz [expert]
+system peak_refresh_rate <=60                 # caps the screen at 60 Hz instead of 90 or 120 Hz; scrolling looks less smooth. Pixel and stock Android; may do nothing where the skin has its own switch in Settings > Display

@@ -1,0 +1,14 @@
+# Chipset vendor packages (Qualcomm, MediaTek, Unisoc). Same format as core.txt.
+# They carry the modem, VoLTE/Wi-Fi calling, eSIM, GPS, display and camera services. Their names rarely
+# say which is which, and a wrong guess costs calls or mobile data, so the whole namespaces are protected.
+
+com.qualcomm.*                                # Qualcomm modem, IMS, eSIM (LPA), location, time
+com.qti.*                                     # Qualcomm telephony and data services
+vendor.qti.*                                  # Qualcomm IMS, IWLAN (Wi-Fi calling), RCS
+org.codeaurora.*                              # Qualcomm IMS and telephony extensions
+com.quicinc.*                                 # Qualcomm services
+com.mediatek.*                                # MediaTek modem, IMS and telephony
+vendor.mediatek.*                             # MediaTek vendor services
+com.mtk.*                                     # MediaTek services
+com.unisoc.*                                  # Unisoc modem and telephony
+com.sprd.*                                    # Spreadtrum (Unisoc) modem and telephony

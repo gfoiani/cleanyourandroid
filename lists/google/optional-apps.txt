@@ -1,0 +1,59 @@
+# Google apps that ship on most phones and that many people never use.
+# Each group is a separate question: nothing here is applied without the person saying they don't use it.
+# Play services, Play Store, WebView, Carrier Services, Gboard and the rest live in guards/google.txt.
+#
+# @brands: any
+
+# == Google feedback and print suggestions [safe]
+com.google.android.feedback                      # sends app feedback and crash reports to Google
+com.google.android.printservice.recommendation   # suggests print plugins
+
+# == YouTube [ask]
+com.google.android.youtube                       # YouTube app
+
+# == YouTube Music [ask]
+com.google.android.apps.youtube.music            # YouTube Music
+
+# == Google TV (films and series) [ask]
+com.google.android.videos                        # Google TV / Play Movies
+
+# == Google Photos [ask]
+com.google.android.apps.photos                   # Photos: turning it off stops photo backup; photos stay on the phone
+
+# == Google Drive [ask]
+com.google.android.apps.docs                     # Drive: files already on the phone stay
+
+# == Gmail [ask]
+com.google.android.gm                            # Gmail
+
+# == Google Maps [ask]
+com.google.android.apps.maps                     # Maps; other apps open locations in the browser instead
+
+# == Google Calendar [ask]
+com.google.android.calendar                      # Calendar app; on some phones it also syncs events: check another calendar app syncs first
+
+# == Google Meet [ask]
+com.google.android.apps.tachyon                  # Meet (formerly Duo) video calls
+
+# == Google Wallet [ask]
+com.google.android.apps.walletnfcrel             # Wallet: contactless payments, cards and passes
+
+# == Google app, Discover and Assistant [ask]
+com.google.android.googlequicksearchbox          # Google app: search bar, Discover, Lens, "Hey Google", Android Auto voice; skipped while it is the default assistant
+com.google.android.apps.googleassistant          # Assistant shortcut app
+
+# == Google Lens and AR [ask]
+com.google.ar.lens                               # Lens shortcut
+com.google.ar.core                               # ARCore: augmented reality for apps and games
+
+# == Files by Google [ask]
+com.google.android.apps.nbu.files                # Files by Google (the system file picker is separate and protected)
+
+# == Digital Wellbeing [ask]
+com.google.android.apps.wellbeing                # screen time, Bedtime mode, Focus mode, parental limits
+
+# == Android Auto [ask]
+com.google.android.projection.gearhead           # Android Auto for the car
+
+# == Android System Intelligence [expert]
+com.google.android.as                            # Live Caption, Now Playing, smart text selection, app suggestions

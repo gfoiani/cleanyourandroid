@@ -1,0 +1,35 @@
+# Apps from other companies that phone makers preload under partner deals.
+# A package that is not on the phone is left out by compose.py, so this list fits every brand.
+#
+# @brands: any
+
+# == Facebook preload services [safe]
+com.facebook.appmanager                          # installs and updates Facebook apps in the background
+com.facebook.services                            # Facebook background services
+com.facebook.system                              # Facebook App Installer
+
+# == Amazon preload services [safe]
+com.amazon.appmanager                            # installs Amazon apps in the background
+
+# == Netflix [ask]
+com.netflix.mediaclient                          # the preloaded Netflix app (downloads are kept while off)
+
+# == Microsoft Link to Windows [ask]
+com.microsoft.appmanager                         # Link to Windows: phone on the PC
+com.microsoft.deviceintegrationservice           # Link to Windows device integration
+com.microsoftsdk.crossdeviceservicebroker        # Microsoft cross-device services
+
+# == Microsoft OneDrive and Office [ask]
+com.microsoft.skydrive                           # OneDrive: files already on the phone stay
+com.microsoft.office.officehubrow                # Microsoft 365 (Office)
+
+# == Facebook, Instagram and LinkedIn preloads [ask]
+com.facebook.katana                              # Facebook app
+com.instagram.android                            # Instagram
+com.linkedin.android                             # LinkedIn
+
+# == Shopping and travel preloads [ask]
+com.amazon.mShop.android.shopping                # Amazon Shopping
+com.booking                                      # Booking.com
+com.einnovation.temu                             # Temu
+com.zzkko                                        # SHEIN

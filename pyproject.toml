@@ -1,0 +1,29 @@
+[project]
+name = "cleanyourandroid"
+version = "0.1.0"
+description = "Debloat Android phones over USB, with a coding assistant that asks before every choice."
+license = { text = "MIT" }
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tools", "tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["tools"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint.isort]
+known-first-party = [
+  "actions", "adb", "backup", "check", "common", "compose", "device", "disable", "gen_tables",
+  "guards", "helpers", "listfile", "probe", "recovery", "restore", "screenshot", "tune", "tweakfile",
+  "tweakrecord",
+]
